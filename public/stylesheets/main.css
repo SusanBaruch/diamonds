@@ -1,0 +1,55 @@
+ body {
+    font-family: 'Boogaloo', cursive;
+    font-size: 18px;
+    background-color: rgba(255, 0, 0, 0.2);
+ }
+ /*      background: #8E44AD;   studio color */
+    /*     background: #9A12B3} 
+    font-family: 'Boogaloo', cursive;
+font-family: 'Varela Round', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Quicksand', sans-serif;
+*/
+    
+.bottom-left {
+    position:fixed;
+    bottom:0px;
+    left:0%;
+}    
+
+
+.thumbnail img {
+    width:100%;
+    width: 304px;
+    height: 236px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+.thumbnail .caption {
+    padding: 9px;
+}
+
+.land-page {
+    display: block;
+    padding: 0 100px;
+}
+
+.sample-image {
+    width: 100px;
+    height: 70px;
+}
+
+.right-button {
+    float: right;
+}
+
+#delete-form {
+    display: inline;
+}
+
+#light-color {
+    color: white;
+}
+

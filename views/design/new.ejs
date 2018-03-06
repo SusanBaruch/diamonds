@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+
+
+<div class="container">
+    <div class="row">
+        <h1>Tell us what you had in mind:</h1>
+        <h2 id="light-color">Add new comments to <%= diamond.name %></h2>
+            <form action="/diamonds/<%= diamond._id %>/design" method="POST">
+               <div class="form-group">
+                    <input class="form-group" type="text" name="design[text]" size="150" placeholder="text">  
+                </div>        
+            
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block">Submit</button>
+            </div>
+        </form>
+        <a href="/diamonds">Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>
+

@@ -1,0 +1,79 @@
+<% include ../partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+
+            <div class="container">
+                <p class="lead" id="light-color">Diamond Cuts</p>
+                    <p id="light-color" >Round</p>
+                    <img class="img-rounded sample-image" src="/images/dia_round.jpg">
+                    <p id="light-color" class="font-weight-bold">Princess<p>
+                    <img class="img-rounded sample-image" src="/images/princess.jpg">
+                    <p id="light-color" class="font-weight-bold">Oval</p>
+                    <img class="img-rounded sample-image" src="/images/oval.jpg">
+                    <p id="light-color" class="font-weight-bold">Pear</p>
+                    <img class="img-rounded sample-image" src="/images/pear.jpg">
+                    <p></p>
+                    <a href="/diamonds">Back</a>
+            </div>
+        </div>
+
+
+        <div class="col-md-6">
+
+                <div class="thumbnail">
+                            <div class="well">
+
+                  <img class="img-responsive" src="/<%= diamond.image %>"> 
+      
+                  <div class="caption-full">
+                        <h4><%= diamond.name %></h4>
+
+                         <p><%= diamond.description %></p>    
+
+                  <% if (currentUser && diamond.author.id.equals(currentUser._id)){ %>
+ 
+                        <a class="btn btn-warning" href="/diamonds/<%= diamond._id %>/edit">Edit</a>
+                      <form id="delete-form" action="/diamonds/<%= diamond._id %>?_method=DELETE" method="POST">
+                          <button class="btn btn-danger">Delete</button>
+                      </form>
+                 <% } %>
+                 
+                  </div>
+                </div>
+            </div>
+
+            <div class="well">
+                 <h3 class="text-left">Your Design Instructions:</h3>
+                <div >
+                    <p><a class="btn btn-success right-button" href="/diamonds/<%= diamond._id %>/design/new">New Instructions</a>
+                    </p>
+                </div>
+                <hr>
+
+                    <% diamond.design.forEach(function(design){ %>
+                    <% if (currentUser && design.author.id.equals(currentUser._id)){ %>
+                    <div class="row">
+                        <div class="col-md-12">
+                           <p><strong><%= design.text %></strong></p>
+
+                
+                       <a class="btn btn-xs btn-warning" href="/diamonds/<%= diamond._id %>/design/<%= design._id %>/edit">Edit</a>
+                       <form id="delete-form" action="/diamonds/<%= diamond._id %>/design/<%= design._id %>?_method=DELETE" method="POST">
+                           <input type="submit" class="btn btn-xs btn-danger" value="Delete">
+                       </form>
+
+                 
+                    </div>
+                </div>
+                      <% } %>
+                <% }); %>
+                  
+            </div>
+        </div>
+                         
+    </div>
+</div>
+<% include ../partials/footer %>
+
